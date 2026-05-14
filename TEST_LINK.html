@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Link - Birthday Surprise Website</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+        }
+        
+        h1 {
+            color: #333;
+            margin-bottom: 30px;
+            text-align: center;
+            font-size: 2rem;
+        }
+        
+        .section {
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 2px solid #eee;
+        }
+        
+        .section:last-child {
+            border-bottom: none;
+        }
+        
+        h2 {
+            color: #667eea;
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+        }
+        
+        .link-list {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .link-list li {
+            margin: 10px 0;
+            padding: 10px;
+            background: #f9f9f9;
+            border-left: 4px solid #667eea;
+            border-radius: 4px;
+        }
+        
+        .link-list a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+        
+        .link-list a:hover {
+            color: #764ba2;
+            text-decoration: underline;
+        }
+        
+        .status {
+            font-size: 0.9rem;
+            color: #666;
+            margin-left: 10px;
+        }
+        
+        .status.ok {
+            color: #27ae60;
+            font-weight: bold;
+        }
+        
+        .info-box {
+            background: #ecf0f1;
+            border-left: 4px solid #3498db;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        
+        .info-box strong {
+            color: #2c3e50;
+        }
+        
+        .color-palette {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .color-box {
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            color: white;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+            font-size: 0.9rem;
+        }
+        
+        .animation-test {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 50%;
+            margin: 10px 5px;
+            animation: bounce 1s ease-in-out infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            color: #666;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎉 Test del Sito Sorpresa - Verifica Link</h1>
+        
+        <div class="info-box">
+            <strong>ℹ️ Benvenuto!</strong> Questo file testa tutti i link e verifica la struttura del sito.
+            Fai clic su ogni link per confermare che tutto funziona correttamente.
+        </div>
+        
+        <!-- LANDING PAGE -->
+        <div class="section">
+            <h2>📍 Landing Page (index.html)</h2>
+            <ul class="link-list">
+                <li>
+                    <a href="index.html">index.html</a>
+                    <span class="status ok">✅ Home Page</span>
+                </li>
+            </ul>
+            <div class="info-box">
+                Contiene: Titolo "Hi, love", bottoni "Yes!!" e "No, thanks"
+            </div>
+        </div>
+        
+        <!-- SURPRISE PAGE -->
+        <div class="section">
+            <h2>🎊 Hub Principale (Pagina Sorpresa)</h2>
+            <ul class="link-list">
+                <li>
+                    <a href="pages/surprise.html">pages/surprise.html</a>
+                    <span class="status ok">✅ Pagina con 4 icone</span>
+                </li>
+            </ul>
+            <div class="info-box">
+                Da qui puoi accedere a: Foto, Musica, Lettera, Regalo
+            </div>
+        </div>
+        
+        <!-- PAGINE INTERNE -->
+        <div class="section">
+            <h2>🌟 Pagine Interne (accessibili da surprise.html)</h2>
+            <ul class="link-list">
+                <li>
+                    <a href="pages/photos.html">🖼️ pages/photos.html</a>
+                    <span class="status ok">✅ Galleria Polaroid</span>
+                </li>
+                <li>
+                    <a href="pages/music.html">🎵 pages/music.html</a>
+                    <span class="status ok">✅ Video YouTube</span>
+                </li>
+                <li>
+                    <a href="pages/letter.html">💌 pages/letter.html</a>
+                    <span class="status ok">✅ Lettera Romantica</span>
+                </li>
+                <li>
+                    <a href="pages/gift.html">🎁 pages/gift.html</a>
+                    <span class="status ok">✅ Regalo con Sorpresa</span>
+                </li>
+            </ul>
+            <div class="info-box">
+                Ogni pagina ha un bottone "Back" che ritorna a surprise.html
+            </div>
+        </div>
+        
+        <!-- PALETTE COLORI -->
+        <div class="section">
+            <h2>🎨 Palette Colori Coerenti</h2>
+            <div class="color-palette">
+                <div class="color-box" style="background: linear-gradient(135deg, #ffeaa7 0%, #fab1a0 50%, #ff7675 100%);">
+                    <strong>Landing</strong><br>#ffeaa7 → #ff7675
+                </div>
+                <div class="color-box" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                    <strong>Sorpresa</strong><br>#667eea → #764ba2
+                </div>
+                <div class="color-box" style="background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);">
+                    <strong>Foto</strong><br>#ffecd2 → #fcb69f
+                </div>
+                <div class="color-box" style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);">
+                    <strong>Musica</strong><br>#a8edea → #fed6e3
+                </div>
+                <div class="color-box" style="background: linear-gradient(135deg, #f5e6d3 0%, #e8d4b8 100%);">
+                    <strong>Lettera</strong><br>#f5e6d3 → #e8d4b8
+                </div>
+                <div class="color-box" style="background: linear-gradient(135deg, #ffd89b 0%, #19547b 100%);">
+                    <strong>Regalo</strong><br>#ffd89b → #19547b
+                </div>
+            </div>
+        </div>
+        
+        <!-- ANIMAZIONI -->
+        <div class="section">
+            <h2>⚡ Test Animazioni</h2>
+            <div class="info-box">
+                <strong>Guarda gli elementi sottostanti che si muovono:</strong><br>
+                Se li vedi animarsi, le animazioni CSS funzionano correttamente! 🎬
+            </div>
+            <div style="text-align: center; margin-top: 20px;">
+                <div class="animation-test"></div>
+                <div class="animation-test"></div>
+                <div class="animation-test"></div>
+            </div>
+        </div>
+        
+        <!-- CHECKLIST -->
+        <div class="section">
+            <h2>✅ Checklist di Verifica</h2>
+            <ul class="link-list">
+                <li>☑️ Pagina Landing (index.html) carica correttamente</li>
+                <li>☑️ Pulsante "Yes!!" porta a pages/surprise.html</li>
+                <li>☑️ Pagina Sorpresa mostra 4 icone cliccabili</li>
+                <li>☑️ Foto → pages/photos.html funziona</li>
+                <li>☑️ Musica → pages/music.html funziona</li>
+                <li>☑️ Lettera → pages/letter.html funziona</li>
+                <li>☑️ Regalo → pages/gift.html funziona</li>
+                <li>☑️ Back button ritorna a pagina precedente</li>
+                <li>☑️ Colori sono coerenti su tutte le pagine</li>
+                <li>☑️ Animazioni sono fluide e non hanno lag</li>
+                <li>☑️ Responsive design funziona su mobile</li>
+            </ul>
+        </div>
+        
+        <!-- PERSONALIZZAZIONE -->
+        <div class="section">
+            <h2>📝 Personalizzazione</h2>
+            <div class="info-box">
+                <strong>Leggi il file PERSONALIZZAZIONE.md per:</strong><br>
+                - Come inserire le tue foto<br>
+                - Come aggiungere il video YouTube<br>
+                - Come scrivere la lettera<br>
+                - Come personalizzare il messaggio regalo
+            </div>
+        </div>
+        
+        <footer>
+            <p>🎉 Fatto con ❤️ - Sito Sorpresa di Compleanno</p>
+            <p>Data: 14 Maggio 2026</p>
+        </footer>
+    </div>
+</body>
+</html>

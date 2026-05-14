@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Special Gift - Birthday Surprise</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="gift-page">
+    <!-- ===================== PAGINA REGALO CON SORPRESA ===================== -->
+    <!-- Regalo interattivo da aprire:
+         - Icona regalo cliccabile con animazione
+         - Click per aprire con effetto rotazione e zoom
+         - Rivela messaggio romantico con confetti animati
+         - Back button ritorna a surprise.html
+         
+         PERSONALIZZAZIONE: Modifica il messaggio e la firma
+         BONUS: Effetto confetti automatico quando aperto!
+    ===================================================================== -->
+    <a href="surprise.html" class="back-btn">
+        <i class="fas fa-arrow-left"></i> Back
+    </a>
+    
+    <div class="gift-container">
+        <h1 class="gift-title">It's time to open your present.<br>I hope you like it.</h1>
+        
+        <div class="gift-wrapper">
+            <!-- Icona regalo cliccabile -->
+            <div class="gift-box" id="giftBox">
+                <i class="fas fa-gift"></i>
+            </div>
+            
+            <p class="gift-hint">Click the gift to open it! 🎉</p>
+        </div>
+        
+        <!-- Contenuto della sorpresa (inizialmente nascosto) -->
+        <div class="surprise-content" id="surpriseContent">
+            <!-- ===================== PERSONALIZZAZIONE MESSAGGIO REGALO ===================== -->
+            <!-- Personalizza il messaggio speciale:
+                 1. Sostituisci il titolo ("Happy Birthday, My Love! 💕") 
+                 2. Modifica il messaggio principale con il tuo testo personalizzato
+                 3. Personalizza la firma ("❤️ Forever yours ❤️") come preferisci
+                 
+                 Questo messaggio apparirà con animazione confetti quando il regalo viene aperto!
+            ========================================================================= -->
+            
+            <div class="surprise-section">
+                <h2>Happy Birthday, My Love! 💕</h2>
+                <div class="special-message">
+                    <p>
+                        You are the most amazing person I know. Every day with you is a blessing,
+                        and I can't wait to create more beautiful memories together. Thank you for
+                        being you - the love of my life, my best friend, and my everything.
+                    </p>
+                    <p class="heart-message">❤️ Forever yours ❤️</p>
+                </div>
+            </div>
+
+            
+            <!-- Effetto confetti (puramente decorativo) -->
+            <div class="confetti" id="confetti"></div>
+        </div>
+    </div>
+    
+    <script src="../js/script.js"></script>
+    <script>
+        // Gift interaction script
+        const giftBox = document.getElementById('giftBox');
+        const surpriseContent = document.getElementById('surpriseContent');
+        const confetti = document.getElementById('confetti');
+        let isOpened = false;
+        
+        giftBox.addEventListener('click', function() {
+            if (!isOpened) {
+                isOpened = true;
+                
+                // Anima l'icona regalo
+                giftBox.classList.add('opened');
+                
+                // Mostra il contenuto della sorpresa
+                surpriseContent.classList.add('show');
+                
+                // Crea effetto confetti
+                createConfetti();
+            }
+        });
+        
+        function createConfetti() {
+            for (let i = 0; i < 50; i++) {
+                const confettiPiece = document.createElement('div');
+                confettiPiece.classList.add('confetti-piece');
+                confettiPiece.style.left = Math.random() * 100 + '%';
+                confettiPiece.style.delay = Math.random() * 0.5 + 's';
+                confettiPiece.style.backgroundColor = ['#ff6b6b', '#4ecdc4', '#45b7d1', '#f7dc6f', '#bb8fce'][Math.floor(Math.random() * 5)];
+                confetti.appendChild(confettiPiece);
+            }
+        }
+    </script>
+</body>
+</html>

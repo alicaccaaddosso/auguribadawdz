@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>These are for you - Birthday Surprise</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="surprise-page">
+    <!-- ===================== PAGINA PRINCIPALE SORPRESA ===================== -->
+    <!-- Hub centrale con 4 sezioni cliccabili:
+         1. Photos (pages/photos.html) - Galleria polaroid
+         2. Music (pages/music.html) - Video YouTube embed
+         3. Letter (pages/letter.html) - Lettera romantica
+         4. Gift (pages/gift.html) - Regalo con sorpresa
+         
+         Back button ritorna a ../index.html (landing page)
+         
+         NAVIGAZIONE: Usa le frecce del mouse sulle icone per effetti hover!
+    ===================================================================== -->
+    <a href="../index.html" class="back-btn">
+        <i class="fas fa-arrow-left"></i> Back
+    </a>
+    
+    <div class="surprise-container">
+        <h1 class="surprise-title">These are for you</h1>
+        
+        <div class="icons-grid">
+            <!-- Fotocamera -->
+            <a href="photos.html" class="icon-card">
+                <div class="icon-wrapper">
+                    <i class="fas fa-camera"></i>
+                </div>
+                <p class="icon-label">Photos</p>
+            </a>
+            
+            <!-- Cuffie -->
+            <a href="music.html" class="icon-card">
+                <div class="icon-wrapper">
+                    <i class="fas fa-headphones"></i>
+                </div>
+                <p class="icon-label">Music</p>
+            </a>
+            
+            <!-- Libro -->
+            <a href="letter.html" class="icon-card">
+                <div class="icon-wrapper">
+                    <i class="fas fa-book"></i>
+                </div>
+                <p class="icon-label">Letter</p>
+            </a>
+            
+            <!-- Pacco Regalo -->
+            <a href="gift.html" class="icon-card">
+                <div class="icon-wrapper">
+                    <i class="fas fa-gift"></i>
+                </div>
+                <p class="icon-label">Gift</p>
+            </a>
+        </div>
+    </div>
+    
+    <script src="../js/script.js"></script>
+</body>
+</html>

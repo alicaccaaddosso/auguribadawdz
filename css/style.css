@@ -1,0 +1,1361 @@
+/* ====================================================================
+   BIRTHDAY SURPRISE WEBSITE - MAIN STYLESHEET
+   ====================================================================
+   
+   PALETTE COLORI PRINCIPALE:
+   - Rosa/Rosso: #ff7675, #f5576c, #d63031 (Elementi di accento, gift)
+   - Blu/Viola: #667eea, #764ba2 (Pagina sorpresa, tema principale)
+   - Azzurro: #a8edea, #4facfe (Pagina musica, icone)
+   - Verde: #43e97b, #38f9d7 (Icone alternative)
+   - Arancione/Giallo: #ffeaa7, #fab1a0, #fee140 (Landing page, warm tones)
+   - Beige/Terra: #f5e6d3, #e8d4b8 (Pagina lettera, classic)
+   - Bianco: #ffffff (Sfondo contenuti, testo)
+   - Grigio scuro: #333, #555 (Testo primario e secondario)
+   
+   TIMING ANIMAZIONI (per fluidità ottimale):
+   - Hover effects: 0.3s (piccoli movimenti)
+   - Page transitions: 0.5s (fade in/out pagine)
+   - Loading animations: 0.6-0.8s (Polaroid, video)
+   - Complex animations: 0.8s-1.2s (gift opening)
+   
+   RESPONSIVE BREAKPOINTS:
+   - Desktop: 1024px+
+   - Tablet: 768px - 1023px
+   - Mobile grande: 600px - 767px
+   - Mobile piccolo: 480px - 599px
+   - Extra small: < 480px
+   
+   ==================================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Landing Page Styles */
+.landing-page {
+    background: linear-gradient(135deg, #ffeaa7 0%, #fab1a0 50%, #ff7675 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Playfair Display', 'Georgia', serif;
+}
+
+.landing-container {
+    text-align: center;
+    max-width: 600px;
+    padding: 40px;
+}
+
+.main-title {
+    font-size: 5rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0 0 20px 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    letter-spacing: 2px;
+}
+
+.subtitle {
+    font-size: 1.5rem;
+    color: #ffffff;
+    margin: 0 0 50px 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 300;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.button-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 15px 40px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn-yes {
+    background-color: #ffffff;
+    color: #d63031;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.btn-yes:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    background-color: #f0f0f0;
+}
+
+.btn-no {
+    background-color: rgba(255, 255, 255, 0.3);
+    color: #ffffff;
+    border: 2px solid #ffffff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.btn-no:hover {
+    transform: translateY(-2px);
+    background-color: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Surprise Page Styles */
+.surprise-page {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 40px 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    position: relative;
+}
+
+.back-btn {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    background-color: rgba(255, 255, 255, 0.3);
+    color: #ffffff;
+    padding: 12px 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+.back-btn:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+    transform: translateX(-5px);
+}
+
+.surprise-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 40px;
+}
+
+.surprise-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0 0 80px 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    letter-spacing: 1px;
+}
+
+.icons-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.icon-card {
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+}
+
+.icon-card:hover {
+    transform: translateY(-15px);
+}
+
+.icon-card:hover .icon-wrapper {
+    transform: scale(1.15) rotateZ(5deg);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4), 0 0 30px rgba(255, 255, 255, 0.3);
+    animation: iconPulse 0.6s ease;
+}
+
+.icon-card:hover .icon-label {
+    transform: scale(1.1);
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
+}
+
+.icon-card:active .icon-wrapper {
+    transform: scale(0.95);
+}
+
+.icon-wrapper {
+    width: 150px;
+    height: 150px;
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4rem;
+    color: #ffffff;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.icon-wrapper::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.1) 50%, transparent 70%);
+    transform: rotate(45deg);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.icon-card:hover .icon-wrapper::before {
+    opacity: 1;
+    animation: shine 0.6s ease;
+}
+
+.icon-card:nth-child(2) .icon-wrapper {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+}
+
+.icon-card:nth-child(3) .icon-wrapper {
+    background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+}
+
+.icon-card:nth-child(4) .icon-wrapper {
+    background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+}
+
+.icon-label {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin: 0;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    letter-spacing: 1px;
+}
+
+@keyframes iconPulse {
+    0%, 100% {
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4), 0 0 30px rgba(255, 255, 255, 0.3);
+    }
+    50% {
+        box-shadow: 0 15px 50px rgba(0, 0, 0, 0.5), 0 0 50px rgba(255, 255, 255, 0.5);
+    }
+}
+
+@keyframes shine {
+    0% {
+        transform: translateX(-100%) translateY(-100%) rotate(45deg);
+    }
+    100% {
+        transform: translateX(100%) translateY(100%) rotate(45deg);
+    }
+}
+
+/* Photos Page Styles */
+.photos-page {
+    background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+    min-height: 100vh;
+    padding: 40px 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    position: relative;
+    overflow: hidden;
+}
+
+.birthday-backdrop {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 8rem;
+    font-weight: 900;
+    color: rgba(255, 255, 255, 0.08);
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.1);
+    white-space: nowrap;
+    z-index: 0;
+    letter-spacing: -5px;
+    pointer-events: none;
+}
+
+.photos-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 20px;
+    position: relative;
+    z-index: 1;
+    perspective: 1200px;
+}
+
+.polaroids-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 35px 30px;
+    padding: 20px;
+    justify-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+    perspective-origin: center center;
+}
+
+.polaroid {
+    background: #ffffff;
+    width: 200px;
+    padding: 12px;
+    border-radius: 8px;
+    box-shadow: 
+        0 4px 6px rgba(0, 0, 0, 0.07),
+        0 10px 25px rgba(0, 0, 0, 0.12),
+        0 20px 40px rgba(0, 0, 0, 0.08);
+    transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+    transform: rotate(var(--rotation, 0deg)) translateZ(0);
+    cursor: pointer;
+    will-change: transform, box-shadow;
+    position: relative;
+    transform-style: preserve-3d;
+}
+
+/* Rotazioni casuali per ogni polaroid */
+.polaroid:nth-child(1) {
+    --rotation: -3deg;
+}
+
+.polaroid:nth-child(2) {
+    --rotation: 2deg;
+}
+
+.polaroid:nth-child(3) {
+    --rotation: -4deg;
+}
+
+.polaroid:nth-child(4) {
+    --rotation: 3deg;
+}
+
+.polaroid:nth-child(5) {
+    --rotation: -2deg;
+}
+
+.polaroid:nth-child(6) {
+    --rotation: 2.5deg;
+}
+
+.polaroid:nth-child(7) {
+    --rotation: -3.5deg;
+}
+
+.polaroid:nth-child(8) {
+    --rotation: 1.5deg;
+}
+
+.polaroid:hover {
+    box-shadow: 
+        0 6px 8px rgba(0, 0, 0, 0.1),
+        0 15px 35px rgba(0, 0, 0, 0.18),
+        0 25px 50px rgba(0, 0, 0, 0.12);
+    transform: rotate(0deg) scale(1.08) translateY(-8px);
+}
+
+.polaroid:active {
+    transform: rotate(0deg) scale(1.04) translateY(-5px);
+    box-shadow: 
+        0 4px 6px rgba(0, 0, 0, 0.1),
+        0 12px 30px rgba(0, 0, 0, 0.15),
+        0 20px 40px rgba(0, 0, 0, 0.08);
+}
+
+.polaroid img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+    border-radius: 4px;
+    background: linear-gradient(135deg, #e0e0e0 0%, #f5f5f5 100%);
+    transition: all 0.3s ease;
+}
+
+.polaroid:hover img {
+    filter: brightness(1.05) saturate(1.1);
+}
+
+.polaroid-caption {
+    text-align: center;
+    margin-top: 12px;
+    font-size: 0.95rem;
+    color: #333;
+    font-weight: 500;
+    font-family: 'Courier New', monospace;
+    min-height: 20px;
+    transition: all 0.3s ease;
+}
+
+.polaroid:hover .polaroid-caption {
+    color: #555;
+    font-weight: 600;
+}
+
+/* Animazione di caricamento delle polaroid */
+@keyframes polaroidEntry {
+    from {
+        opacity: 0;
+        transform: scale(0.85) rotate(var(--rotation, 0deg));
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) rotate(var(--rotation, 0deg));
+    }
+}
+
+.polaroid {
+    animation: polaroidEntry 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) backwards;
+}
+
+.polaroid:nth-child(1) { animation-delay: 0.1s; }
+.polaroid:nth-child(2) { animation-delay: 0.2s; }
+.polaroid:nth-child(3) { animation-delay: 0.3s; }
+.polaroid:nth-child(4) { animation-delay: 0.4s; }
+.polaroid:nth-child(5) { animation-delay: 0.5s; }
+.polaroid:nth-child(6) { animation-delay: 0.6s; }
+.polaroid:nth-child(7) { animation-delay: 0.7s; }
+.polaroid:nth-child(8) { animation-delay: 0.8s; }
+
+/* Music Page Styles */
+.music-page {
+    background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    position: relative;
+}
+
+.music-container {
+    max-width: 800px;
+    width: 100%;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 60px 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+.music-title {
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: #333;
+    margin: 0 0 50px 0;
+    letter-spacing: 1px;
+}
+
+.video-wrapper {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    margin-bottom: 30px;
+}
+
+.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+}
+
+.music-note {
+    font-size: 1.3rem;
+    color: #666;
+    margin: 0;
+    font-weight: 500;
+}
+
+/* Letter Page Styles */
+.letter-page {
+    background: linear-gradient(135deg, #f5e6d3 0%, #e8d4b8 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    font-family: 'Georgia', 'Garamond', serif;
+    position: relative;
+}
+
+.letter-container {
+    max-width: 700px;
+    width: 100%;
+}
+
+.letter-paper {
+    background: linear-gradient(135deg, #faf6f1 0%, #f4ebe3 100%);
+    padding: 60px 50px;
+    border-radius: 8px;
+    box-shadow: 
+        0 20px 60px rgba(0, 0, 0, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 0.5),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.05);
+    border: 3px solid #e8d4b8;
+    position: relative;
+    line-height: 1.8;
+}
+
+.letter-paper::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        repeating-linear-gradient(
+            0deg,
+            rgba(200, 150, 100, 0.03) 0px,
+            rgba(200, 150, 100, 0.03) 1px,
+            transparent 1px,
+            transparent 2px
+        );
+    border-radius: 8px;
+    pointer-events: none;
+}
+
+.letter-content {
+    position: relative;
+    z-index: 1;
+}
+
+.letter-content p {
+    font-size: 1.1rem;
+    color: #333;
+    margin: 0 0 20px 0;
+    text-align: justify;
+    letter-spacing: 0.5px;
+}
+
+.letter-greeting {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 30px;
+    text-align: left;
+    color: #8b4513;
+}
+
+.letter-closing {
+    margin-top: 40px;
+    text-align: right;
+    font-style: italic;
+    color: #8b4513;
+    font-size: 1.15rem;
+}
+
+.letter-decoration {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    display: flex;
+    gap: 15px;
+    z-index: 2;
+}
+
+.flower-deco {
+    font-size: 2rem;
+    opacity: 0.8;
+    animation: float 3s ease-in-out infinite;
+}
+
+.flower-deco:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.flower-deco:nth-child(2) {
+    animation-delay: 0.5s;
+}
+
+.flower-deco:nth-child(3) {
+    animation-delay: 1s;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Gift Page Styles */
+.gift-page {
+    background: linear-gradient(135deg, #ffd89b 0%, #19547b 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    position: relative;
+    overflow: hidden;
+}
+
+.gift-container {
+    max-width: 800px;
+    width: 100%;
+    text-align: center;
+    z-index: 10;
+}
+
+.gift-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0 0 60px 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    line-height: 1.4;
+}
+
+.gift-wrapper {
+    position: relative;
+    margin-bottom: 40px;
+}
+
+.gift-box {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto 30px;
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 5rem;
+    color: #ffffff;
+    cursor: pointer;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    user-select: none;
+}
+
+.gift-box:hover:not(.opened) {
+    transform: scale(1.1) rotateZ(-5deg);
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.4);
+}
+
+.gift-box.opened {
+    animation: openGift 0.8s ease;
+}
+
+@keyframes openGift {
+    0% {
+        transform: scale(1) rotateZ(0deg);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.2) rotateZ(10deg);
+    }
+    100% {
+        transform: scale(0.8) rotateZ(-360deg);
+        opacity: 0;
+    }
+}
+
+.gift-hint {
+    font-size: 1.1rem;
+    color: #ffffff;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    margin: 0;
+}
+
+.surprise-content {
+    opacity: 0;
+    transform: scale(0.8) translateY(30px);
+    transition: all 0.8s ease;
+    pointer-events: none;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.surprise-content.show {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+    pointer-events: all;
+}
+
+.surprise-section {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 40px;
+    border-radius: 15px;
+    margin-bottom: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+}
+
+.surprise-section h2 {
+    font-size: 1.8rem;
+    color: #333;
+    margin: 0 0 20px 0;
+}
+
+.surprise-photo {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+}
+
+.surprise-message {
+    font-size: 1.2rem;
+    color: #333;
+    line-height: 1.8;
+    font-style: italic;
+    margin: 0;
+}
+
+.special-message {
+    text-align: center;
+}
+
+.special-message p {
+    font-size: 1.2rem;
+    color: #333;
+    line-height: 1.8;
+    margin: 0 0 20px 0;
+    font-style: italic;
+}
+
+.heart-message {
+    font-size: 1.3rem;
+    color: #e74c3c;
+    font-weight: bold;
+    margin: 20px 0 0 0;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Confetti Effect */
+#confetti {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 5;
+}
+
+.confetti-piece {
+    position: absolute;
+    top: -10px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    animation: confettiFall 3s ease-in forwards;
+}
+
+@keyframes confettiFall {
+    to {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .main-title {
+        font-size: 4rem;
+    }
+    
+    .subtitle {
+        font-size: 1.3rem;
+    }
+    
+    .surprise-title {
+        font-size: 3rem;
+    }
+    
+    .icons-grid {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 30px;
+    }
+    
+    .icon-wrapper {
+        width: 130px;
+        height: 130px;
+        font-size: 3.5rem;
+    }
+    
+    .icon-label {
+        font-size: 1.2rem;
+    }
+    
+    .polaroids-grid {
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        gap: 30px 25px;
+    }
+    
+    .polaroid {
+        width: 180px;
+    }
+    
+    .polaroid img {
+        height: 180px;
+    }
+    
+    .music-container {
+        max-width: 700px;
+        padding: 50px 35px;
+    }
+    
+    .music-title {
+        font-size: 2.5rem;
+    }
+    
+    .letter-paper {
+        padding: 50px 40px;
+    }
+    
+    .gift-container {
+        max-width: 700px;
+    }
+    
+    .back-btn {
+        padding: 12px 25px;
+        min-height: 44px;
+    }
+    
+    .btn {
+        padding: 15px 40px;
+        min-height: 48px;
+    }
+    
+    .icon-wrapper {
+        width: 130px;
+        height: 130px;
+        min-width: 130px;
+        min-height: 130px;
+    }
+    
+    .gift-box {
+        min-width: 150px;
+        min-height: 150px;
+    }
+    
+    .special-message p {
+        font-size: 1.15rem;
+    }
+    
+    .heart-message {
+        font-size: 1.25rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .main-title {
+        font-size: 3rem;
+        letter-spacing: 1px;
+    }
+    
+    .subtitle {
+        font-size: 1.1rem;
+        margin-bottom: 40px;
+    }
+    
+    .button-container {
+        gap: 15px;
+    }
+    
+    .btn {
+        padding: 18px 35px;
+        font-size: 1.3rem;
+        min-width: 140px;
+    }
+    
+    .surprise-title {
+        font-size: 2.5rem;
+        margin-bottom: 60px;
+    }
+    
+    .icons-grid {
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        gap: 25px;
+    }
+    
+    .icon-wrapper {
+        width: 140px;
+        height: 140px;
+        font-size: 4rem;
+    }
+    
+    .icon-label {
+        font-size: 1.1rem;
+    }
+    
+    .birthday-backdrop {
+        font-size: 6rem;
+    }
+    
+    .polaroids-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 20px 15px;
+        padding: 15px;
+    }
+    
+    .polaroid {
+        width: 170px;
+        padding: 10px;
+    }
+    
+    .polaroid img {
+        height: 170px;
+    }
+    
+    .polaroid-caption {
+        font-size: 0.9rem;
+    }
+    
+    .music-container {
+        padding: 35px 20px;
+        max-width: 95%;
+    }
+    
+    .music-title {
+        font-size: 2rem;
+        margin-bottom: 35px;
+    }
+    
+    .video-wrapper {
+        margin-bottom: 25px;
+    }
+    
+    .music-note {
+        font-size: 1.2rem;
+    }
+    
+    .letter-paper {
+        padding: 35px 25px;
+    }
+    
+    .letter-content p {
+        font-size: 1rem;
+        margin-bottom: 18px;
+    }
+    
+    .letter-greeting {
+        font-size: 1.2rem;
+        margin-bottom: 25px;
+    }
+    
+    .letter-closing {
+        font-size: 1.1rem;
+        margin-top: 30px;
+    }
+    
+    .letter-decoration {
+        top: 15px;
+        right: 25px;
+        gap: 12px;
+    }
+    
+    .flower-deco {
+        font-size: 1.8rem;
+    }
+    
+    .gift-title {
+        font-size: 1.8rem;
+        margin-bottom: 35px;
+    }
+    
+    .gift-box {
+        width: 130px;
+        height: 130px;
+        font-size: 4.5rem;
+    }
+    
+    .back-btn {
+        top: 15px;
+        left: 15px;
+        padding: 12px 25px;
+        font-size: 1rem;
+        min-height: 44px;
+        min-width: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .btn {
+        padding: 20px 40px;
+        font-size: 1.4rem;
+        min-height: 50px;
+    }
+    
+    .icon-card {
+        min-height: 180px;
+        padding: 15px;
+    }
+    
+    .icon-wrapper {
+        width: 160px;
+        height: 160px;
+        font-size: 4.5rem;
+        min-width: 160px;
+        min-height: 160px;
+    }
+    
+    .gift-box {
+        width: 140px;
+        height: 140px;
+        font-size: 5rem;
+        min-width: 140px;
+        min-height: 140px;
+    }
+    
+    .surprise-section {
+        padding: 25px 18px;
+        margin-bottom: 25px;
+    }
+    
+    .surprise-section h2 {
+        font-size: 1.4rem;
+        margin-bottom: 18px;
+    }
+    
+    .surprise-message {
+        font-size: 1.1rem;
+    }
+    
+    .special-message p {
+        font-size: 1rem;
+        margin-bottom: 15px;
+    }
+    
+    .heart-message {
+        font-size: 1.1rem;
+    }
+    
+    .surprise-message {
+        font-size: 1.1rem;
+    }
+    
+    .special-message p {
+        font-size: 1rem;
+        margin-bottom: 15px;
+    }
+    
+    .heart-message {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-title {
+        font-size: 3.5rem;
+    }
+    
+    .subtitle {
+        font-size: 1.2rem;
+    }
+    
+    .btn {
+        padding: 16px 30px;
+        font-size: 1.25rem;
+    }
+    
+    .back-btn {
+        top: 20px;
+        left: 20px;
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+    
+    .surprise-title {
+        font-size: 2.8rem;
+        margin-bottom: 70px;
+    }
+    
+    .icons-grid {
+        grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+        gap: 35px;
+    }
+    
+    .icon-wrapper {
+        width: 140px;
+        height: 140px;
+        font-size: 3.8rem;
+    }
+    
+    .icon-label {
+        font-size: 1.2rem;
+    }
+    
+    .birthday-backdrop {
+        font-size: 5rem;
+    }
+    
+    .polaroids-grid {
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        gap: 25px 20px;
+        padding: 15px;
+    }
+    
+    .polaroid {
+        width: 160px;
+        padding: 10px;
+        box-shadow: 
+            0 3px 4px rgba(0, 0, 0, 0.07),
+            0 8px 20px rgba(0, 0, 0, 0.1),
+            0 15px 35px rgba(0, 0, 0, 0.06);
+    }
+    
+    .polaroid:hover {
+        transform: rotate(0deg) scale(1.06) translateY(-6px);
+        box-shadow: 
+            0 5px 6px rgba(0, 0, 0, 0.1),
+            0 12px 25px rgba(0, 0, 0, 0.15),
+            0 18px 40px rgba(0, 0, 0, 0.08);
+    }
+    
+    .polaroid img {
+        height: 160px;
+    }
+    
+    .music-container {
+        padding: 40px 25px;
+        max-width: 95%;
+    }
+    
+    .music-title {
+        font-size: 2rem;
+        margin-bottom: 40px;
+    }
+    
+    .letter-paper {
+        padding: 40px 30px;
+        border: 2px solid #e8d4b8;
+    }
+    
+    .letter-content p {
+        font-size: 1rem;
+        margin-bottom: 15px;
+    }
+    
+    .letter-greeting {
+        font-size: 1.2rem;
+    }
+    
+    .gift-title {
+        font-size: 2rem;
+        margin-bottom: 40px;
+    }
+    
+    .gift-box {
+        width: 120px;
+        height: 120px;
+        font-size: 4rem;
+    }
+    
+    .surprise-section {
+        padding: 30px 20px;
+    }
+    
+    .back-btn {
+        top: 20px;
+        left: 20px;
+        padding: 10px 20px;
+        font-size: 0.9rem;
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .btn {
+        padding: 16px 30px;
+        font-size: 1.25rem;
+        min-height: 48px;
+    }
+    
+    .icon-card {
+        min-height: 170px;
+        padding: 12px;
+    }
+    
+    .icon-wrapper {
+        width: 140px;
+        height: 140px;
+        font-size: 3.8rem;
+        min-width: 140px;
+        min-height: 140px;
+    }
+    
+    .gift-box {
+        width: 120px;
+        height: 120px;
+        font-size: 4rem;
+        min-width: 120px;
+        min-height: 120px;
+    }
+    
+    .surprise-message {
+        font-size: 1.1rem;
+    }
+    
+    .special-message p {
+        font-size: 1.1rem;
+        margin-bottom: 18px;
+    }
+    
+    .heart-message {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .birthday-backdrop {
+        font-size: 3rem;
+    }
+    
+    .polaroids-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px 12px;
+        padding: 10px;
+    }
+    
+    .polaroid {
+        width: 100%;
+        padding: 8px;
+        box-shadow: 
+            0 2px 3px rgba(0, 0, 0, 0.08),
+            0 6px 15px rgba(0, 0, 0, 0.12),
+            0 10px 30px rgba(0, 0, 0, 0.08);
+    }
+    
+    .polaroid:hover {
+        transform: rotate(0deg) scale(1.05) translateY(-4px);
+        box-shadow: 
+            0 4px 5px rgba(0, 0, 0, 0.1),
+            0 10px 20px rgba(0, 0, 0, 0.15),
+            0 15px 35px rgba(0, 0, 0, 0.08);
+    }
+    
+    .polaroid img {
+        height: auto;
+        aspect-ratio: 1;
+    }
+    
+    .polaroid-caption {
+        font-size: 0.8rem;
+        margin-top: 8px;
+    }
+    
+    .music-container {
+        padding: 30px 15px;
+        border-radius: 15px;
+    }
+    
+    .music-title {
+        font-size: 1.5rem;
+        margin-bottom: 30px;
+    }
+    
+    .music-note {
+        font-size: 1.1rem;
+    }
+    
+    .letter-paper {
+        padding: 30px 20px;
+        border: 2px solid #e8d4b8;
+    }
+    
+    .letter-content p {
+        font-size: 0.95rem;
+        margin-bottom: 12px;
+        text-align: left;
+    }
+    
+    .letter-greeting {
+        font-size: 1.1rem;
+    }
+    
+    .letter-closing {
+        font-size: 1rem;
+    }
+    
+    .letter-decoration {
+        top: 10px;
+        right: 20px;
+        gap: 10px;
+    }
+    
+    .flower-deco {
+        font-size: 1.5rem;
+    }
+    
+    .gift-title {
+        font-size: 1.5rem;
+        margin-bottom: 30px;
+    }
+    
+    .gift-box {
+        width: 100px;
+        height: 100px;
+        font-size: 3rem;
+    }
+    
+    .gift-hint {
+        font-size: 1rem;
+    }
+    
+    .surprise-section {
+        padding: 20px 15px;
+        margin-bottom: 20px;
+    }
+    
+    .surprise-section h2 {
+        font-size: 1.3rem;
+        margin-bottom: 15px;
+    }
+    
+    .surprise-message {
+        font-size: 1rem;
+    }
+    
+    .special-message p {
+        font-size: 1rem;
+        margin-bottom: 15px;
+    }
+    
+    .heart-message {
+        font-size: 1.1rem;
+    }
+}

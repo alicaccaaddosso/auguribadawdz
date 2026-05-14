@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>This song reminds me of you - Music</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="music-page">
+    <!-- ===================== PAGINA MUSICA CON VIDEO YOUTUBE ===================== -->
+    <!-- Pagina dedicata a un video/canzone speciale:
+         - Video YouTube embed responsive (16:9 aspect ratio)
+         - Fade-in animation al caricamento
+         - Background gradient soft
+         - Back button ritorna a surprise.html
+         
+         PERSONALIZZAZIONE: Inserisci il link embed YouTube
+    ===================================================================== -->
+    <a href="surprise.html" class="back-btn">
+        <i class="fas fa-arrow-left"></i> Back
+    </a>
+    
+    <div class="music-container">
+        <!-- ===================== PERSONALIZZAZIONE VIDEO YOUTUBE ===================== -->
+        <!-- Come inserire il tuo video YouTube:
+             1. Vai su YouTube e copia l'URL del video
+             2. Sostituisci "watch?v=ID" con "embed/ID"
+             3. Incolla il link embed completo al posto di [LINK_YOUTUBE]
+             
+             Esempio:
+             - URL originale: https://www.youtube.com/watch?v=dQw4w9WgXcQ
+             - URL embed: https://www.youtube.com/embed/dQw4w9WgXcQ
+        ===================================================================== -->
+        <h1 class="music-title">This song reminds me of you</h1>
+        
+        <div class="video-wrapper">
+            <!-- Inserisci il link embed YouTube al posto di [LINK_YOUTUBE] -->
+            <iframe 
+                src="[LINK_YOUTUBE]" 
+                title="Your Special Song"
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+            </iframe>
+        </div>
+        
+        <p class="music-note">🎵 A special song just for you 🎵</p>
+    </div>
+    
+    <script src="../js/script.js"></script>
+</body>
+</html>
