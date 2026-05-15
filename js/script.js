@@ -149,9 +149,11 @@ function setupButtonHovers() {
  */
 function setupPolaroidHovers() {
     const polaroids = document.querySelectorAll('.polaroid');
-    polaroids.forEach((polaroid, index) => {
-        // Effetto tilt 3D al movimento mouse
+    polaroids.forEach((polaroid) => {
+        // Effetto tilt 3D al movimento mouse (solo se non scoperta)
         polaroid.addEventListener('mousemove', function(e) {
+            if (this.classList.contains('revealed')) return;
+            
             const rect = this.getBoundingClientRect();
             const x = e.clientX - rect.left;
             const y = e.clientY - rect.top;
@@ -171,16 +173,9 @@ function setupPolaroidHovers() {
         });
         
         polaroid.addEventListener('mouseleave', function() {
-            // Ritorna alla rotazione originale e rimuove tilt
-            const rotation = this.getAttribute('data-rotation') || 0;
-            this.style.transform = `rotate(${rotation}deg)`;
+            const rotation = this.style.getPropertyValue('--rotation') || '0deg';
+            this.style.transform = `rotate(${rotation})`;
         });
-        
-        // Salva la rotazione originale
-        const computedStyle = window.getComputedStyle(this);
-        const transform = computedStyle.transform;
-        const rotation = this.style.getPropertyValue('--rotation') || '0deg';
-        this.setAttribute('data-rotation', rotation);
     });
 }
 
@@ -218,12 +213,23 @@ function initializePageSpecificFeatures() {
 function setupPhotosPageFeatures() {
     const polaroids = document.querySelectorAll('.polaroid');
     if (polaroids.length > 0) {
-        // Aggiungi effetto di loading staggered
         polaroids.forEach((polaroid, index) => {
+            // Anima l'apparizione delle polaroid
             polaroid.style.opacity = '0';
             setTimeout(() => {
                 polaroid.style.opacity = '1';
+                polaroid.style.transition = 'opacity 0.5s ease-in';
             }, index * 80);
+            
+            // Aggiungi click handler alla copertina
+            const cover = polaroid.querySelector('.photo-cover');
+            if (cover) {
+                cover.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    polaroid.classList.add('revealed');
+                });
+            }
         });
     }
 }
@@ -402,5 +408,60 @@ style.textContent = `
     }
 `;
 document.head.appendChild(style);
+
+// ============================================
+// CONFETTI - CORIANDOLI ANIMATI
+// ============================================
+
+const confettiColors = ['color-pink', 'color-red', 'color-blue', 'color-purple', 'color-cyan', 'color-green', 'color-yellow', 'color-orange'];
+
+function createConfetti() {
+    // Crea il contenitore dei coriandoli se non esiste
+    if (!document.getElementById('confetti-container')) {
+        const container = document.createElement('div');
+        container.id = 'confetti-container';
+        document.body.appendChild(container);
+    }
+}
+
+function generateConfetti() {
+    const container = document.getElementById('confetti-container');
+    if (!container) return;
+    
+    for (let i = 0; i < 50; i++) {
+        const confetti = document.createElement('div');
+        confetti.className = `confetti ${confettiColors[Math.floor(Math.random() * confettiColors.length)]}`;
+        
+        // Posizione casuale
+        confetti.style.left = Math.random() * 100 + '%';
+        confetti.style.top = '-10px';
+        
+        // Durata casuale tra 3 e 5 secondi
+        const duration = 3 + Math.random() * 2;
+        confetti.style.animationDuration = duration + 's';
+        
+        // Ritardo casuale
+        confetti.style.animationDelay = Math.random() * 0.5 + 's';
+        
+        // Rotazione casuale
+        confetti.style.transform = `rotateZ(${Math.random() * 360}deg)`;
+        
+        container.appendChild(confetti);
+        
+        // Rimuovi il coriandolo dopo che l'animazione è finita
+        setTimeout(() => {
+            confetti.remove();
+        }, (duration + 0.5) * 1000);
+    }
+}
+
+// Genera coriandoli ogni 2-3 secondi
+createConfetti();
+const confettiInterval = setInterval(generateConfetti, 2500);
+
+// Pulisci l'intervallo quando la pagina cambia
+window.addEventListener('beforeunload', () => {
+    clearInterval(confettiInterval);
+});
 
 console.log('✨ All interactive features initialized!');

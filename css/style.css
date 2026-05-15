@@ -2,6 +2,8 @@
    BIRTHDAY SURPRISE WEBSITE - MAIN STYLESHEET
    ====================================================================
    
+   Google Fonts Import - Fortnite-style font
+   
    PALETTE COLORI PRINCIPALE:
    - Rosa/Rosso: #ff7675, #f5576c, #d63031 (Elementi di accento, gift)
    - Blu/Viola: #667eea, #764ba2 (Pagina sorpresa, tema principale)
@@ -27,6 +29,16 @@
    
    ==================================================================== */
 
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&display=swap');
+
+@font-face {
+    font-family: 'Fortnite';
+    src: url('../fonts/fortnite.woff') format('woff'),
+         url('../fonts/fortnite.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -34,14 +46,14 @@
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Fortnite', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
 }
 
 /* Landing Page Styles */
 .landing-page {
-    background: linear-gradient(135deg, #ffeaa7 0%, #fab1a0 50%, #ff7675 100%);
+    background: #6791c3;
     min-height: 100vh;
     display: flex;
     align-items: center;
@@ -81,6 +93,7 @@ body {
 }
 
 .btn {
+    font-family: 'Fredoka', sans-serif;
     padding: 15px 40px;
     font-size: 1.2rem;
     border: none;
@@ -95,7 +108,7 @@ body {
 
 .btn-yes {
     background-color: #ffffff;
-    color: #d63031;
+    color: #6791c3;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
@@ -120,7 +133,7 @@ body {
 
 /* Surprise Page Styles */
 .surprise-page {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: #6791c3;
     min-height: 100vh;
     padding: 40px 20px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -157,6 +170,7 @@ body {
 }
 
 .surprise-title {
+    font-family: 'Fredoka', sans-serif;
     font-size: 3.5rem;
     font-weight: 700;
     color: #ffffff;
@@ -166,11 +180,15 @@ body {
 }
 
 .icons-grid {
-    display: grid;
+    display: flex;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 40px;
     max-width: 900px;
     margin: 0 auto;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 190px;
 }
 
 .icon-card {
@@ -250,6 +268,7 @@ body {
 }
 
 .icon-label {
+    font-family: 'Fredoka', sans-serif;
     font-size: 1.3rem;
     font-weight: 600;
     color: #ffffff;
@@ -279,7 +298,7 @@ body {
 
 /* Photos Page Styles */
 .photos-page {
-    background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+    background: #6791c3;
     min-height: 100vh;
     padding: 40px 20px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -312,7 +331,10 @@ body {
 }
 
 .polaroids-grid {
-    display: grid;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     gap: 35px 30px;
     padding: 20px;
@@ -320,6 +342,17 @@ body {
     max-width: 1400px;
     margin: 0 auto;
     perspective-origin: center center;
+}
+
+.poppo {
+    gap: 50px;
+    display: flex;
+}
+
+.poppo2 {
+    gap: 50px;
+    display: flex;
+    margin-top: 130px;
 }
 
 .polaroid {
@@ -418,6 +451,38 @@ body {
     font-weight: 600;
 }
 
+/* Photo Cover Overlay */
+.photo-cover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4rem;
+    color: #ffffff;
+    cursor: pointer;
+    transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+    z-index: 100;
+    box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.3);
+    user-select: none;
+}
+
+.photo-cover:hover {
+    transform: scale(0.98);
+    box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.2), 0 0 20px rgba(102, 126, 234, 0.5);
+}
+
+.polaroid.revealed .photo-cover {
+    opacity: 0;
+    pointer-events: none;
+    transform: rotateY(180deg) scale(1.1);
+}
+
 /* Animazione di caricamento delle polaroid */
 @keyframes polaroidEntry {
     from {
@@ -445,7 +510,7 @@ body {
 
 /* Music Page Styles */
 .music-page {
-    background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+    background: #6791c3;
     min-height: 100vh;
     display: flex;
     align-items: center;
@@ -467,6 +532,7 @@ body {
 }
 
 .music-title {
+    font-family: 'Fredoka', sans-serif;
     font-size: 2.8rem;
     font-weight: 700;
     color: #333;
@@ -503,7 +569,7 @@ body {
 
 /* Letter Page Styles */
 .letter-page {
-    background: linear-gradient(135deg, #f5e6d3 0%, #e8d4b8 100%);
+    background: #6791c3;
     min-height: 100vh;
     display: flex;
     align-items: center;
@@ -617,7 +683,7 @@ body {
 
 /* Gift Page Styles */
 .gift-page {
-    background: linear-gradient(135deg, #ffd89b 0%, #19547b 100%);
+    background: #6791c3;
     min-height: 100vh;
     display: flex;
     align-items: center;
@@ -636,6 +702,7 @@ body {
 }
 
 .gift-title {
+    font-family: 'Fredoka', sans-serif;
     font-size: 2.5rem;
     font-weight: 700;
     color: #ffffff;
@@ -1357,5 +1424,68 @@ body {
     
     .heart-message {
         font-size: 1.1rem;
+    }
+}
+
+/* ====================================================================
+   CONFETTI STYLES - CORIANDOLI ANIMATI
+   ==================================================================== */
+
+#confetti-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+    overflow: hidden;
+}
+
+.confetti {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    opacity: 0.8;
+    animation: confetti-fall linear infinite;
+    will-change: transform, opacity;
+}
+
+.confetti.color-pink {
+    background-color: #ff7675;
+}
+
+.confetti.color-red {
+    background-color: #f5576c;
+}
+
+.confetti.color-blue {
+    background-color: #667eea;
+}
+
+.confetti.color-purple {
+    background-color: #764ba2;
+}
+
+.confetti.color-cyan {
+    background-color: #4facfe;
+}
+
+.confetti.color-green {
+    background-color: #43e97b;
+}
+
+.confetti.color-yellow {
+    background-color: #fee140;
+}
+
+.confetti.color-orange {
+    background-color: #fab1a0;
+}
+
+@keyframes confetti-fall {
+    to {
+        transform: translateY(100vh) rotateZ(720deg);
+        opacity: 0;
     }
 }
